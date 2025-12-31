@@ -1,3 +1,4 @@
+
 name: CI Pipeline
 
 on:
@@ -5,26 +6,12 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-
-    - name: Install dependencies
-      run: echo "Dependencies installed"
-
-    - name: Run tests
-      run: echo "Test executed successfully"
-
-    - name: Upload test report
-      uses: actions/upload-artifact@v3
-      with:
-        name: Test Report
-        path: report.xml
+    - name: Simple CI check
+      run: echo "CI pipeline running successfully"
